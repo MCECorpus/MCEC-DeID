@@ -13,6 +13,7 @@
 |Q|implemented y/n|Full-face photographs and any comparable images|[[image]]|notes|
 |J|implemented y/n|Account numbers|[[account-nums]]|notes|
 |K|implemented y/n|Certificate/license numbers|[[certificate-num]]|notes|
+|R|implemented y/n|Other identifying info|[[other]]|Any other unique identifying number, characteristic, or code|
 
 ## Safe Harbor ID: "A"
 
@@ -20,19 +21,11 @@ Names
 
 Implemented y/n|Item|Tag|Notes|
 |--------------|----|---|-----|
-|implemented y/n|Full Names|[[name-full]]|notes|
-|implemented y/n|First & Second Names|[[name-first]]|notes|
-|implemented y/n|Last Name(s)|[[name-last]]|notes|
-|implemented y/n|hypocorism (nickname)|[[name-hypo]]|notes|
-
-## Safe Harbor ID: "R"
-
-Other unique identifiers
-
-Implemented y/n|Item|Tag|Notes|
-|--------------|----|---|-----|
-|Any other unique identifying number, characteristic, or code|
-|implemented y/n|Other identifying info|[[other]]|notes|
+|implemented y/n|Full Names|[[full-name]]|notes|
+|implemented y/n|First & Second Names|[[first-name]]|notes|
+|implemented y/n|Last Name(s)|[[last-name]]|notes|
+|implemented y/n|Hypocorism (nickname)|[[nickname]]|notes|
+|implemented y/n|Initials|[[name-initials]]|notes|
 
 ## Safe Harbor ID: "B"
 
@@ -55,7 +48,9 @@ Implemented y/n|Item|Tag|Notes|
 |--------------|----|---|-----|
 |All elements of dates (except year) for dates that are directly related to an individual|
 |implemented y/n|Birth date|[[birth-date]]|notes|
-|implemented y/n|Admission date|[[admission-date]]|notes|
+|implemented y/n|Admission date|[[admission-date]]|Admission to the university|
+|implemented y/n|Graduation date|[[graduation-date]]|Graduation from the university|
+|implemented y/n|Semester|[[semester]]|*Specific to the MCEC|
 |implemented y/n|Discharge date|[[discharge-date]]|notes|
 |implemented y/n|Death date|[[death-date]]|notes|
 |implemented y/n|Ages above 89|[[age-89+]]|notes|
