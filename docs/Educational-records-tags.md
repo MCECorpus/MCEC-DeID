@@ -1,14 +1,5 @@
-# FERPA tags
 
-The U.S. Department of Education' protects students privacy via the Family Educational Rights and Privacy Act, also known as [FERPA](https://studentprivacy.ed.gov/).
-
-FERPA defines certain [personally identifiable information](https://studentprivacy.ed.gov/ferpa#0.1_se34.1.99_13), some of which overlaps with HIPAA privacy iterms. The tags defined here are those protected by ferpa
-
-Other information that, alone or in combination, is linked or linkable to a specific student that would allow a reasonable person in the school community, who does not have personal knowledge of the relevant circumstances, to identify the student with reasonable certainty; or
-
-(g) Information requested by a person who the educational agency or institution reasonably believes knows the identity of the student to whom the education record relates.
-
-## MCEC ID "D"
+## FERPA ID "A"
 
 Academic materials/methods
 

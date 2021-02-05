@@ -5,10 +5,10 @@ Automatic de-identifier of email data that follows the [HIPAA Safe-Harbor method
 
 - [MCEC De-Identification Tool (MCEC DeID)](#mcec-de-identification-tool-mcec-deid)
   - [Overview](#overview)
-  - [De-identification vs Anonymization](#de-identification-vs-anonymization)
-    - [What is de-identified data?](#what-is-de-identified-data)
+  - [Protecting participant data](#protecting-participant-data)
+    - [MCEC's standpoint on data privacy and confidentiality](#mcecs-standpoint-on-data-privacy-and-confidentiality)
+    - [De-identification vs Anonymization](#de-identification-vs-anonymization)
     - [What is anonymized data?](#what-is-anonymized-data)
-  - [MCEC's standpoint on data privacy and confidentiality](#mcecs-standpoint-on-data-privacy-and-confidentiality)
   - [Identifiers](#identifiers)
     - [The Safe Harbor method](#the-safe-harbor-method)
     - [FERPA protected information](#ferpa-protected-information)
@@ -17,9 +17,10 @@ Automatic de-identifier of email data that follows the [HIPAA Safe-Harbor method
     - [MCEC contact keys](#mcec-contact-keys)
     - [Anonymization keys](#anonymization-keys)
     - [References](#references)
-  - [Tags](#tags)
-    - [Types of tags](#types-of-tags)
-    - [Tag formatting:](#tag-formatting)
+  - [Methods of de-identification](#methods-of-de-identification)
+    - [Redaction](#redaction)
+    - [Suppression](#suppression)
+    - [Tags](#tags)
   - [Project Organization](#project-organization)
   - [Getting Started](#getting-started)
     - [Requirements](#requirements)
@@ -58,6 +59,17 @@ If you have any questions about the MCEC corpus making academic email text publi
 
 ### De-identification vs Anonymization
 
+Email data, even if it is work/school related may contain direct or indirect personal identifiable information, which is  is not only confidential, but also protected by law. For this reason we have a four-step process to unlink this information (identifiers) from the people they identify (referents). Referents not only include interlocutors (the people that are part of an email exchange), but also people who are mentioned in an email exchange.
+
+The de-identification -- anonymization process outlined by the MCEC is the following:
+
+1. Only Principal Investigators (PI and co-PIs) can recruit participants for the project. Current PIs are listed in the [MCEC Team Roles document](./docs/MCEC-team-roles.md) document. PIs email instructors (professors, adjuncts, teaching assistants, etc.) with an invitation to participate in the project. In turn, instructors who consent in being part of the study contact their students with an invitation email. Students who consent then forward the MCEC Project emails between themselves and their instructors.
+2. The two [co-directors]([MCEC Team Roles document](./docs/MCEC-team-roles.md)) Damian Romero and Hanyu Jia collect the emails and run the automated script contained in this repository. The automated script redacts (removes) [HIPAA](docs/HIPAA-tags.md) and [FERPA](docs/MCEC-specific-tags.md) identifiers and replace them with generic [tags](#tags). This is a first-pass towards de-identification.
+3. The two [co-directors]([MCEC Team Roles document](./docs/MCEC-team-roles.md)) manually de-identify the output of the automated script to redact (remove) any direct identifiers and replace them with generic [tags](#tags). The files are re-named using [codes/keys](#mcec-codeskeys) to which only the co-directors have access. At this point, the data is considered de-identified for internal use since the non-PI team members will not have any direct knowledge about the identity of the interlocutors. This version of the dataset will then be uploaded to a secure box folder.
+4. The MCEC team members will then engage in the anonymization of the data contained in the secure box folder. The objective is to further redact (remove) direct and indirect identifiers from the data. Once the data has been completely de-identified, this data is considered usable for academic research internal to the MCEC team members. The data is kept in a secure box folder and the previous version of the data is destroyed.
+5. Once the data is completely de-identified, Damian Romero or Hanyu Jia renames the files using [anonymization keys](#mcec-codeskeys). At this point the data is considered anonymized and ready for making it openly available. However, the MCEC directors have put an extra filter in place to ensure that the quality of the anonymization is as high as possible before making it public.
+6. Before making the data publicly available, the anonymized version of data must sit for at least 3 months in a secure box folder to which only the project directors have access. The data then is run through a second script that uses machine learning algorithms to catch any anonymization issues. Finally, the output of that program is manually checked and any necessary changes are made by members of the MCEC team. At this point the data is considered safe and ready to be published  as part of the Multilingual College Email Corpus through the [University of Arizona Research Data Repository (ReDATA)]([https:](https://data.library.arizona.edu/redata)).
+
 #### What is de-identified data?
 
 The U.S. Department of Education defines [de-identified data](https://studentprivacy.ed.gov/glossary#de-identified-data) as:
@@ -78,49 +90,15 @@ We base our de-identification methodology on two main resources: the Health Insu
 
 ### The Safe Harbor method
 
-The Safe Harbor method outlines a set of identifiers to be stripped from any publicly available information. These identifiers are linked with "the individual or of relatives, employers, or household members of the individual" ([U.S. Department of Health & Human Services](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html#safeharborguidance), 2021/01/31). We have expanded these identifiers to include data specific to our needs. For instance, the Safe Harbor "A" identifier category (Names) has been expanded [here](insert-link) to include hypocorisms, which are relatively frequent in academic emails. See coding manual [examples](insert-link).
+The Safe Harbor method outlines a set of identifiers to be stripped from any publicly available information. These identifiers are linked with "the individual or of relatives, employers, or household members of the individual" ([U.S. Department of Health & Human Services](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html#safeharborguidance), 2021/01/31). We have expanded these identifiers to include data specific to our needs. For instance, the Safe Harbor "A" identifier category (Names) has been expanded [here](docs/HIPAA-tags.md) to include hypocorisms, which are relatively frequent in academic emails. See coding manual [examples](insert-link).
 
 ### FERPA protected information
 
 Like HIPAA, FERPA protects two types of information: education records, and personally identifiable information.
 
-"Education records are those records that are directly related to a student and are maintained by an
-educational agency or institution or by a party acting for the agency or institution. For more information, see the Family Educational Rights and Privacy Act regulations, 34 CFR §99.3." ([U.S. Department of Education. (2021, February 2). *Glossary*. Student Privacy.](https://studentprivacy.ed.gov/glossary#educational-records))
+"Education records are those records that are directly related to a student and are maintained by an educational agency or institution or by a party acting for the agency or institution. For more information, see the Family Educational Rights and Privacy Act regulations, 34 CFR §99.3." ([U.S. Department of Education. (2021, February 2). *Glossary*. Student Privacy.](https://studentprivacy.ed.gov/glossary#educational-records))
 
-
-"Personally identifiable information (PII) includes information that can be used to distinguish or trace an
-individual’s identity either directly or indirectly through linkages with other information"
-
-
-
-34 CFR § 99.3
-
-
-The 2010 NIST guide extends the list of examples
-of indirect identifiers to include place of birth,
-race, religion, weight, activities, employment
-information, medical information, education
-information, and financial information (NIST
-2010 Special Publication 800-122, p. 2-2). 
-
-
-
-Techniques described that can be used to protect
-student level data include generalizing the data
-by grouping continuous values and applying
-top and bottom coding to either continuous or
-categorical data to avoid outliers; suppressing
-the data by deleting entire records or parts of
-records; introducing “noise” into the data by
-adding small amounts of variation into selected
-data; swapping the data by exchanging certain
-data elements in one record with the same data
-elements from a similar record; blanking and
-imputing for randomly selected records; and
-blurring by replacing data with the average value
-by replacing a selected value (e.g., an outlier) of a
-data element with the average value for that data
-element for the entire group.
+"Personally identifiable information (PII) includes information that can be used to distinguish or trace an individual’s identity either directly or indirectly through linkages with other information" [U.S. Department of Education. (2021, February 2). *Glossary*. Personally Identifiable Information (PII)](https://studentprivacy.ed.gov/glossary#header-for-P)
 
 ## MCEC Codes/Keys
 
@@ -139,7 +117,7 @@ Re-identification keys are the most important keys for confidentiality purposes.
 
 Following FERPA guidelines ([34 CFR § 99.31(b)(2)](https://studentprivacy.ed.gov/node/548/#0.1_se34.1.99_131)), our re-identification codes are not based on participants' personal information. We do not share how the re-identification codes are generated or assigned. Only MCEC co-directors Damian Romero and Hanyu Jia will use these keys to match de-identified records to the source materials for education research purposes.
 
-Internal MCEC data files (e.g. email files) are named by Damian Romero and Hanyu Jia using these re-identification keys. This allows the other members of the MCEC Team to work on data anonymization (anonymization checks, redaction of indirect identifiers, supression of personal information, etc.). The use of re-identification keys also offers an extra layer of protection to any inadvertent or unauthorized disclosures of personal information.
+Internal MCEC data files (e.g. email files) are named by Damian Romero and Hanyu Jia using these re-identification keys. This allows the other members of the MCEC Team to work on data anonymization (anonymization checks, redaction of indirect identifiers, suppression of personal information, etc.). The use of re-identification keys also offers an extra layer of protection to any inadvertent or unauthorized disclosures of personal information.
 
 TL;DR
 
@@ -157,6 +135,8 @@ TL;DR
 
 ### Anonymization keys
 
+TL;DR
+
    - Anonymization key access: Public. No de-identification table exists.
    - Use: Public version of the corpus with no re-identification (record) keys. 
    - Note: These keys are not linked to any personally identifiable information. Anonymization keys are assigned to individual email conversations irrespectively of whether or not two or more conversations involve the same interlocutors. As a result, researchers cannot use these keys to match individual records across
@@ -168,19 +148,19 @@ previously de-identified data files from the same source (e.g., to compare stude
 
 ## Methods of de-identification
 
-https://studentprivacy.ed.gov/sites/default/files/resource_document/file/data_deidentification_terms_0.pdf
+The MCEC Project uses two methods of de-identification: redaction and suppression. In our project, protected information is redacted by taking any direct or indirect identifier defined in [HIPAA](docs/HIPAA-tags.md) or [FERPA](docs/MCEC-specific-tags.md) and replacing them with a tag. On the other hand, suppression is the entire removal of a section, phrase or paragraph in which only a single tag [[suppressed-info]] is used to replace that content. For more formal definitions of these two methods, we refer the rerader to the official FERPA documentation: [Data De-identification: An Overview of Basic Terms](https://studentprivacy.ed.gov/sites/default/files/resource_document/file/data_deidentification_terms_0.pdf). The contents are reproduced below:
 
-Redaction
+### Redaction
 
-Redaction is a general term describing the process of expunging sensitive data from the records prior
+"Redaction is a general term describing the process of expunging sensitive data from the records prior
 to disclosure in a way that meets established disclosure requirements applicable to the specific data
 disclosure occurrence (e.g., removing or obscuring PII from published reports to meet federal, state,
 and local privacy laws as well as organizational data disclosure policies). (See disclosure limitation
-method for more information about specific techniques that can be used for data redaction.)
+method for more information about specific techniques that can be used for data redaction.)" ([Data De-identification: An Overview of Basic Terms, p. 5](https://studentprivacy.ed.gov/sites/default/files/resource_document/file/data_deidentification_terms_0.pdf))
 
-Suppression
+### Suppression
 
-Suppression is a disclosure limitation method which involves removing data (e.g., from a cell or a row
+"Suppression is a disclosure limitation method which involves removing data (e.g., from a cell or a row
 in a table) to prevent the identification of individuals in small groups or those with unique
 characteristics. This method may often result in very little data being produced for small populations,
 and it usually requires additional suppression of non-sensitive data to ensure adequate protection
@@ -189,22 +169,7 @@ values of the suppressed cells may not be calculated by subtracting the reported
 and column totals). Correct application of this technique generally ensures low risk of disclosure;
 however, it can be difficult to perform properly because of the necessary calculations (especially for
 large multi-dimensional tables). Further, if additional data are available elsewhere (e.g., total student
-counts are reported), the suppressed data may be re-calculated. 
-
-Disclosure limitation method
-
-Disclosure limitation method (also known as disclosure avoidance method) is a general term
-referring to a statistical technique used to manipulate the data prior to release to minimize the
-risk of inadvertent or unauthorized disclosure of PII.
-
-
-Entities releasing data
-
-Entities releasing data should apply a consistent de-identification strategy to all of their data releases of a similar type (e.g., tabular and individuallevel data) and similar sensitivity level. It is advised that organizations document their data reporting rules in the documents describing their data reporting policies and privacy protection practices, such as a Data Governance Manual. (See PTAC’s Data Governance and Stewardship brief at https://studentprivacy.ed.gov/resources/issue-brief-data-governance-and-stewardship for more information on best practices in data governance.)
-
-
-https://studentprivacy.ed.gov/sites/default/files/resource_document/file/data_deidentification_terms_0.pdf
-
+counts are reported), the suppressed data may be re-calculated." ([Data De-identification: An Overview of Basic Terms, pp. 5-6](https://studentprivacy.ed.gov/sites/default/files/resource_document/file/data_deidentification_terms_0.pdf))
 
 ### Tags
 
@@ -212,19 +177,19 @@ Unless otherwise noted with an asterisk (*), these items are pooled from the Saf
 
 The following lists maps Safe Harbor identifiers to the MCEC-defined de-identification items and tags.
 
-[Safe Harbor tags](link)
+[HIPAA Safe Harbor tags](docs/HIPAA-tags.md)
 
-[MCEC-specific tags](link)
+[MCEC-specific tags (incorporates the FERPA-specific tags)](docs/MCEC-specific-tags.md)
 
-[Sub-tags (both for safe-harbor and MCEC-specific)](link)
+[Sub-tags (both for HIPAA and MCEC-specific)](docs/Sub-tags.md)
 
 #### Types of tags
 
-Appart from the "Tag classification" mentioned above (Safe Harbor tags, MCEC-Specific tags), tags are divided into two types: main tags and sub-tags (aka. 'embedded tags').
+Apart from the "Tag classification" mentioned above (Safe Harbor tags, MCEC-Specific tags), tags are divided into two types: main tags and sub-tags (aka. 'embedded tags').
 
 Main tags are always used to replace identifiable information. These are signaled by the [[double square-brackets]] surrounding them.
 
-Subtags are used to distinguish between more than one identifier item of the same kind, for instance if there are two names, these tags will allow the reader to differenciate between both referents ([instructor] vs [student] or [student][1] vs [student][2]). These tags are embedded within other tags. There can be up to two tags embedded within a main tag.
+Subtags are used to distinguish between more than one identifier item of the same kind, for instance if there are two names, these tags will allow the reader to differentiate between both referents ([instructor] vs [student] or [student][1] vs [student][2]). These tags are embedded within other tags. There can be up to two tags embedded within a main tag.
 
 Sub-tags contain only one set of square brackets, as opposed to main tags, which have two.
 
