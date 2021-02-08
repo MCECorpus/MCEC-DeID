@@ -100,3 +100,15 @@ Automated y/n|Laboratory equipment|[[laboratory-eq]]|Notes|
 Automated y/n|Computer software|[[computer-software]]|Notes|
 Automated y/n|Research method|[[research-method]]|Notes|
 Automated y/n|Other course materials|[[course-material]]|Notes|
+
+
+## Examples of an Education Record include:
+
+Admissions information for students who are accepted and enrolled
+Biographical information including date and place of birth, gender, nationality, information about race and ethnicity, and identification photographs
+Grades, test scores, evaluations, courses taken, academic specialization and activities, and official communications regarding a student's status
+Course work including papers and exams, class schedules, as well as written, email or recorded communications that are part of the academic process
+Disciplinary records
+Students' financial and financial aid records
+Internship program records
+SID:  Student Identification number
