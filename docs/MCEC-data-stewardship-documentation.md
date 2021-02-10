@@ -1,8 +1,8 @@
-# Publishing email data
+# MCEC Data Stewardship Documentation
 
 **Table of contents**
 
-- [Publishing email data](#publishing-email-data)
+- [MCEC Data Stewardship Documentation](#mcec-data-stewardship-documentation)
   - [Overview](#overview)
   - [Data security and privacy](#data-security-and-privacy)
   - [In what cases does FERPA allow for information disclosure?](#in-what-cases-does-ferpa-allow-for-information-disclosure)
@@ -13,25 +13,27 @@
     - [Human Subjects Protection Program (HSPP)](#human-subjects-protection-program-hspp)
     - [Health Insurance Portability and Accountability Act (HIPAA)](#health-insurance-portability-and-accountability-act-hipaa)
     - [Human Subjects Protection Program (HSPP), University of Arizona](#human-subjects-protection-program-hspp-university-of-arizona)
+    - [Other resources](#other-resources)
 
 ## Overview
-This document defines the steps that the MCEC Team have taken to protect our participant's data from collection to publication. That includes the general MCEC workflow for handling data contained in the [`The de-identification - anonymization process`](#the-de-identification---anonymization-process) section below.
+
+This document defines the steps that the MCEC Team have taken to ensure the quality, integrity, accessibility, and security of the MCEC data from collection to publication. That includes the general MCEC workflow for handling data contained in the [`The de-identification - anonymization process`](#the-de-identification---anonymization-process) section below.
 
 For information about the specifics of each process, please consult:
 
-- The [Terms and Definitions document](Terms-and-definitions.md#data-collection) for specific information about our data collection and what we do to avoid undue influence or coercion during this process.
+- The [Terms and Definitions document](Terms-and-definitions.md) for a definition of [data stewardship](Terms-and-definitions.md#data-stewardship) and for specific information about our [data collection](Terms-and-definitions.md#data-collection)) and what we do to avoid [undue influence or coercion](Terms-and-definitions.md##undue-influence-or-coercion) during this process.
 - The [De-identification Team Workflows document](De-identification-team-workflows.md) for the workflows specific to the de-identification process.
--The [Anonymization Team Workflows document](Anonymization-team-workflows.md) for the workflows specific to the anonymization process.
+- The [Anonymization Team Workflows document](Anonymization-team-workflows.md) for the workflows specific to the anonymization process.
 - The [MCEC Keys (Codes) document](MCEC-keys-codes.md) for more information about the types of de-identification and anonymization keys(codes) we use to name our files and participants, as well as how we assign and safeguard them.
 
 ## Data security and privacy
 
 Given the fact that email is a form of personal communication, and to the best of our knowledge there are no publicly-available corpora of emails except for the  [ENRON corpus](https://www.cs.cmu.edu/~enron/), the [Avocado corpus](https://catalog.ldc.upenn.edu/LDC2015T03), and the like, it is reasonable to ask why and in what way does the MCEC Project disclose participant emails?
 
-1. We have obtained [IRB permission](https://rgw.arizona.edu/compliance/human-subjects-protection-program/getting-started) from our institution to conduct research in the manner that is outlined in this documentation. Our current IRB status is classified as a `minimal risk`. To learn more about minimal risk research, please consult the link inside UArizona's [Guidance for Researchers page](https://rgw.arizona.edu/compliance/human-subjects-protection-program/guidance-researchers) where you will find the most up-to-date information.
-2. We have received electronically informed consent from our participants as outlined on FERPA, Section 99.30, paragraphs (a-d).
-3. We de-identify and later anonymize records and other information/data as outlined on FERPA, Section 99.31, paragraph b(1).
-4. We have in place confidentiality-protection workflows to exclude any [`personally identifiable information`](https://studentprivacy.ed.gov/glossary#glossary-node-236) (primary or secondary) as well as any [`education records`](https://studentprivacy.ed.gov/glossary#glossary-node-218). 
+1. We have obtained [IRB permission](Terms-and-definitions.md#data-collection) from our institution to conduct research in the manner that is outlined in this documentation. Our current IRB status is classified as a [minimal risk research project](Terms-and-definitions.md#minimal-risk-research).
+2. We have received electronically informed consent from our participants as outlined on FERPA, [Section 99.30](https://studentprivacy.ed.gov/node/548/#0.1_se34.1.99_130), paragraphs (a-d).
+3. We de-identify and later anonymize records and other information/data as outlined on FERPA, [Section 99.31](https://studentprivacy.ed.gov/node/548/#0.1_se34.1.99_131), paragraph 16 b(1).
+4. We have in place [data-protection workflows](#the-de-identification---anonymization-process) to exclude any [`personally identifiable information`](https://studentprivacy.ed.gov/glossary#glossary-node-236) (primary or secondary) as well as any [`education records`](https://studentprivacy.ed.gov/glossary#glossary-node-218).
 
 ## In what cases does FERPA allow for information disclosure?
 
@@ -46,7 +48,7 @@ In the MCEC Project, we have decided to take no chances regarding our participan
 - Created workflows to anonymize the data after its de-identification, including using a Machine Learning algorithm, and a last manual-check before its publication.
 - Extended this process to cover all our participants and data and not only student data.
 
-Additionally, the MCEC Team reserves the right to exclude any emails from publication, for example if it is the case that the relevant referents cannot be satisfactorily anonymized.
+Additionally, the MCEC Team reserves the right to exclude any data from publication, for example if it is the case that the relevant referents cannot be satisfactorily anonymized.
 
 You may find the relevant FERPA sections copied below:
 
@@ -104,11 +106,11 @@ The University of Arizona considers academic emails as educational records, whic
 
 The de-identification - anonymization process outlined by the MCEC is the following:
 
-1. The two [co-directors]([MCEC Team Roles document](./docs/MCEC-team-roles.md)) Damian Romero and Hanyu Jia collect the emails and run the automated script contained in this repository. The automated script redacts (removes) [HIPAA](docs/HIPAA-tags.md) and [FERPA](docs/MCEC-specific-tags.md) identifiers and replace them with generic [tags](#tags). This is a first-pass towards de-identification.
+1. The two [co-directors]([MCEC Team Roles document](MCEC-team-roles.md)) Damian Romero and Hanyu Jia collect the emails and run the automated script contained in this repository. The automated script redacts (removes) [HIPAA](HIPAA-tags.md) and [FERPA](MCEC-specific-tags.md) identifiers and replace them with generic [tags](#tags). This is a first-pass towards de-identification.
 2. The two [co-directors]([MCEC Team Roles document](MCEC-team-roles.md)) manually de-identify the output of the automated script to redact (remove) any direct identifiers and replace them with generic [tags](#tags). The files are re-named using [codes/keys](MCEC-keys-codes.md) to which only the co-directors have access. At this point, the data is considered de-identified for internal use since the non-PI team members will not have any direct knowledge about the identity of the interlocutors. This version of the dataset will then be uploaded to a secure box folder.
 3. The MCEC team members will then engage in the anonymization of the data contained in the secure box folder. The objective is to further redact (remove) direct and indirect identifiers from the data. Once the data has been completely de-identified, this data is considered usable for academic research internal to the MCEC team members. The data is kept in a secure box folder and the previous version of the data is destroyed.
-4. Once the data is completely de-identified, Damian Romero or Hanyu Jia renames the files using [anonymization keys](#mcec-codeskeys). At this point the data is considered anonymized and ready for making it openly available. However, the MCEC directors have put an extra filter in place to ensure that the quality of the anonymization is as high as possible before making it public.
-5. Before making the data publicly available, the anonymized version of data must sit for at least 3 months in a secure box folder to which only the project directors have access. The data then is run through a second script that uses machine learning algorithms to catch any anonymization issues. Finally, the output of that program is manually checked and any necessary changes are made by members of the MCEC team. At this point the data is considered safe and ready to be published  as part of the Multilingual College Email Corpus through the [University of Arizona Research Data Repository (ReDATA)]([https:](https://data.library.arizona.edu/redata)).
+4. Once the data is completely de-identified, Damian Romero or Hanyu Jia renames the files using [anonymization keys](MCEC-keys-codes.md#anonymization-keys). At this point the data is considered anonymized and ready for making it openly available. However, the MCEC directors have put an extra filter in place to ensure that the quality of the anonymization is as high as possible before making it public.
+5. Before making the data publicly available, the anonymized version of data must sit for at least 3 months in a secure box folder to which only the project directors have access. The data then is run through a second script that uses machine learning algorithms to catch any anonymization issues. Finally, the output of that program is manually checked and any necessary changes are made by members of the MCEC team. At this point the data is considered safe and ready to be published  as part of the Multilingual College Email Corpus through the [University of Arizona Research Data Repository (ReDATA)](https://data.library.arizona.edu/redata).
 
 ## Resources
 
@@ -127,6 +129,7 @@ The de-identification - anonymization process outlined by the MCEC is the follow
 - [Email and Student Privacy](https://studentprivacy.ed.gov/training/email-and-student-privacy)
 - [Issue Brief: Data Governance and Stewardship](https://studentprivacy.ed.gov/node/168/)
 - [Basic Concepts and Definitions for Privacy and Confidentiality in Student Education Records](https://nces.ed.gov/pubs2011/2011601.pdf)
+- [Issue Brief: Data Governance and Stewardship](https://studentprivacy.ed.gov/resources/issue-brief-data-governance-and-stewardship)
 
 ### Human Subjects Protection Program (HSPP)
 
@@ -134,6 +137,7 @@ The de-identification - anonymization process outlined by the MCEC is the follow
 - [UArizona's HSPP Guidance for Researchers](https://rgw.arizona.edu/compliance/human-subjects-protection-program/guidance-researchers)
 - [UArizona's HSPP Regulations](https://rgw.arizona.edu/compliance/human-subjects-protection-program/regulations)
 - [UArizona's information for research participants](https://rgw.arizona.edu/compliance/human-subjects-protection-program/research-participants)
+- [Minimal Risk Research](https://rgw.arizona.edu/sites/default/files/minimal_risk_research_v2020-08.pdf)
 
 ### Health Insurance Portability and Accountability Act (HIPAA)
 
@@ -152,8 +156,14 @@ The de-identification - anonymization process outlined by the MCEC is the follow
 - [HSPP Getting Started](https://rgw.arizona.edu/compliance/human-subjects-protection-program/getting-started)
 - [Principal Investigator Eligibility](https://rgw.arizona.edu/sites/default/files/pi_eligibility_v2020-06.pdf)
 - [Principal Investigator (PI) Responsibilities](https://rgw.arizona.edu/sites/default/files/investigators_responsibility_after_irb_approval_v2020-06.pdf)
+- [Principal Investigator, Project Director, Co-Principal Investigator (PI, PD, Co-PI) Eligibility](https://rgw.arizona.edu/administration/getting-started/principal-investigator-project-director-co-principal)
 
 ### Other resources
 
 - [UArizona Research Data Repository (ReDATA)](http://arizona.figshare.com/)
 - [UArizona Research Data Repository (ReDATA) About page](https://data.library.arizona.edu/redata)
+- [Learner corpora around the world, UCLouvain](https://uclouvain.be/en/research-institutes/ilc/cecl/learner-corpora-around-the-world.html)
+- [International Computer Archive of Modern and Medieval English (ICAME)](http://icame.uib.no/)
+- [ICAME Corpus manuals](http://korpus.uib.no/icame/manuals/)
+- [ENRON corpus](https://www.cs.cmu.edu/~enron/)
+- [Avocado corpus](https://catalog.ldc.upenn.edu/LDC2015T03)

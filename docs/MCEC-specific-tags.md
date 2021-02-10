@@ -72,6 +72,7 @@ Course identifiers
 
 Automated y/n|Item|Tag|Notes|
 |--------------|----|---|-----|
+Automated y/n|Subject name|[[subject-name]]|Notes|
 Automated y/n|Course prefix|[[course-prefix]]|INFO/SPAN/MATH, etc.|
 Automated y/n|Course name|[[course-name]]|Notes|
 Automated y/n|Course number|[[course-no]]|Notes|
