@@ -16,7 +16,7 @@ Apart from the "Tag classification" mentioned above (Safe Harbor tags, MCEC-Spec
 
 Main tags are always used to replace identifiable information. These are signaled by the [[double square-brackets]] surrounding them.
 
-Subtags are used to distinguish between more than one identifier item of the same kind, for instance if there are two names, these tags will allow the reader to differentiate between both referents ([[instructor](docs/Terms-and-definitions.md#instructors)] vs [[student](docs/Terms-and-definitions.md#students)] or [student][1] vs [student][2]). These tags are embedded within other tags. There can be up to two tags embedded within a main tag, but sub-tags cannot be embedded within other sub-tags.
+Subtags are used to distinguish between more than one identifier item of the same kind, for instance if there are two names, these tags will allow the reader to differentiate between both [identifier referents](Terms-and-definitions.md#identifier-referents) ([[instructor](docs/Terms-and-definitions.md#instructors)] vs [[student](docs/Terms-and-definitions.md#students)] or [student][1] vs [student][2]). These tags are embedded within other tags. There can be up to two tags embedded within a main tag, but sub-tags cannot be embedded within other sub-tags.
 
 Sub-tags contain only one set of square brackets, as opposed to main tags, which have two.
 

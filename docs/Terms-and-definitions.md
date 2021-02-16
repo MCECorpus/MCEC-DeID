@@ -18,6 +18,8 @@
     - [Indirect identifier](#indirect-identifier)
     - [Personally identifiable information (PII)](#personally-identifiable-information-pii)
     - [Personally identifiable information for education records](#personally-identifiable-information-for-education-records)
+    - [Protected health information (PHI)](#protected-health-information-phi)
+    - [Identifier referents](#identifier-referents)
   - [Information Privacy Acts (HIPAA vs FERPA)](#information-privacy-acts-hipaa-vs-ferpa)
     - [Family Educational Rights and Privacy Act (FERPA)](#family-educational-rights-and-privacy-act-ferpa)
     - [FERPA protected information](#ferpa-protected-information)
@@ -30,8 +32,8 @@
     - [Principal investigators](#principal-investigators)
   - [Participants](#participants)
     - [Instructors](#instructors)
-    - [Students](#students)
     - [MCEC participant data](#mcec-participant-data)
+    - [Students](#students)
   - [Privacy and confidentiality](#privacy-and-confidentiality)
     - [Confidentiality](#confidentiality)
     - [Privacy](#privacy)
@@ -175,6 +177,8 @@ To learn more about minimal risk research, please consult the link inside UArizo
 
 ## Identifiers
 
+Identifiers are any type of information that links participant data to other participants and, following the HIPAA [Safe Harbor method](#safe-harbor-method), "relatives, employers, or household members of the individual" ([U.S. Department of Health & Human Services](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html#safeharborguidance), 2021-01-31) as well as FERPA "parent or other family members". For the lack of a better term, the MCEC Project uses '[referents](#referents)' to talk about any of the people that an identifier can be linked to.
+
 ### Direct identifiers
 
 "Direct identifiers include information that relates specifically to an individual such as the individual’s residence, including for example, name, address, Social Security Number or other identifying number or code, telephone number, e-mail address, or biometric record. See also Indirect Identifier.
@@ -198,6 +202,44 @@ Additional information on PII is available in the [Family Educational Rights and
 "Personally identifiable information for education records is a FERPA term referring to identifiable information that is maintained in education records and includes direct identifiers, such as a student’s name or identification number, indirect identifiers, such as a student’s date of birth, or other information which can be used to distinguish or trace an individual’s identity either directly or indirectly through linkages with other information.
 
 See [Family Educational Rights and Privacy Act Regulations, 34 CFR §99.3](http://www2.ed.gov/policy/gen/guid/fpco/pdf/ferparegs.pdf), for a complete definition of PII specific to education records and for examples of other data elements that are defined to constitute PII. Additional information is available in the PTAC publication [Protecting Student Privacy While Using Online Educational Services](https://studentprivacy.ed.gov/node/161/)." [Glossary, Protecting Student Privacy, 2021/02/07](https://studentprivacy.ed.gov/glossary#header-for-I)
+
+### Protected health information (PHI)
+
+Although the MCEC Project does not deal with information on patients or health plan members (PHI, see below), the HIPAA safe harbor method of de-identification is a clear guidance on how to protect participant data and it is the model that the Directors of the MCEC Project has decided to use and augment for protecting participant data.
+
+"Under HIPAA, protected health information is considered to be individually identifiable information relating to the past, present, or future health status of an individual that is created, collected, or transmitted, or maintained by a HIPAA-covered entity in relation to the provision of healthcare, payment for healthcare services, or use in healthcare operations (PHI healthcare business uses).
+
+Health information such as diagnoses, treatment information, medical test results, and prescription information are considered protected health information under HIPAA, as are national identification numbers and demographic information such as birth dates, gender, ethnicity, and contact and emergency contact information. PHI relates to physical records, while ePHI is any PHI that is created, stored, transmitted, or received electronically.
+
+PHI only relates to information on patients or health plan members. It does not include information contained in educational and employment records, that includes health information maintained by a HIPAA covered entity in its capacity as an employer.
+
+PHI is only considered PHI when an individual could be identified from the information. If all identifiers are stripped from health data, it ceases to be protected health information and the HIPAA Privacy Rule’s restrictions on uses and disclosures no longer apply.
+
+What is PHI?
+PHI is any health information that can be tied to an individual, which under HIPAA means protected health information includes one or more of the following 18 identifiers. If these identifiers are removed the information is considered de-identified protected health information, which is not subject to the restrictions of the HIPAA Privacy Rule.
+
+1. Names (Full or last name and initial)
+2. All geographical identifiers smaller than a state, except for the initial three digits of a zip code if, according to the current publicly available data from the U.S. Bureau of the Census: the geographic unit formed by combining all zip codes with the same three initial digits contains more than 20,000 people; and the initial three digits of a zip code for all such geographic units containing 20,000 or fewer people is changed to 000
+3. Dates (other than year) directly related to an individual
+4. Phone Numbers
+5. Fax numbers
+6. Email addresses
+7. Social Security numbers
+8. Medical record numbers
+9. Health insurance beneficiary numbers
+10. Account numbers
+11. Certificate/license numbers
+12. Vehicle identifiers (including serial numbers and license plate numbers)
+13. Device identifiers and serial numbers;
+14. Web Uniform Resource Locators (URLs)
+15. Internet Protocol (IP) address numbers
+16. Biometric identifiers, including finger, retinal and voice prints
+17. Full face photographic images and any comparable images
+18. Any other unique identifying number, characteristic, or code except the unique code assigned by the investigator to code the data" [What is Considered Protected Health Information Under HIPAA?, HIPAA Journal, 2021-02-14](https://www.hipaajournal.com/what-is-considered-protected-health-information-under-hipaa/#:~:text=Under%20HIPAA%2C%20protected%20health%20information,provision%20of%20healthcare%2C%20payment%20for)
+
+### Identifier referents
+
+The MCEC Project uses the term "identifier referents", or the shorter "referents" as any of the people that an identifier ([as defined in this document](#identifiers)) can link to. The term "referents" includes participants, but also participants' relatives, employees, or household members. On email exchanges, "referents" not only include interlocutors (the people that are part of an email exchange), but also people who are *mentioned* in that email exchange.
 
 ## Information Privacy Acts (HIPAA vs FERPA)
 
@@ -224,6 +266,10 @@ B) Expanding the identifiers used in the Safe Harbor method to include FERPA and
 ### Family Educational Rights and Privacy Act (FERPA)
 
 "The Family Educational Rights and Privacy Act (FERPA) is a federal law that affords parents the right to have access to their children’s education records, the right to seek to have the records amended, and the right to have some control over the disclosure of personally identifiable information from the education records. When a student turns 18 years old, or enters a postsecondary institution at any age, the rights under FERPA transfer from the parents to the student (“eligible student”). The FERPA statute is found at 20 U.S.C. § 1232g and the FERPA regulations are found at 34 CFR Part 99."([What is FERPA?](https://studentprivacy.ed.gov/faq/what-ferpa))
+
+"The HIPAA Security Rule requires covered entities to protect against reasonably anticipated threats to the security of [PHI](#protected-health-information-phi).  Covered entities must implement safeguards to ensure the confidentiality, integrity, and availability of PHI, although HIPAA is not technology specific and the exact safeguards that should be implemented are left to the discretion of the covered entity.
+
+HIPAA requires physical, technical, and administrative safeguards to be implemented. Technologies such as encryption software and firewalls are covered under technical safeguards. Physical safeguards for PHI data include keeping physical records and electronic devices containing PHI under lock and key. Administrative safeguards include access controls to limit who can view PHI information and security awareness training." [What is Considered Protected Health Information Under HIPAA?, HIPAA Journal, 2021-02-14](https://www.hipaajournal.com/what-is-considered-protected-health-information-under-hipaa/#:~:text=Under%20HIPAA%2C%20protected%20health%20information,provision%20of%20healthcare%2C%20payment%20for)
 
 ### FERPA protected information
 
