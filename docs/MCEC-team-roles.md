@@ -15,7 +15,7 @@ All roles are ordered alphabetically by last name.
 
 - Hanyu Jia
 - Damian Romero
-- Wei Xu
+- Wei Xu [to be added during the Spring 2021 addendum]
 
 # MCEC research team
 
@@ -30,7 +30,7 @@ All roles are ordered alphabetically by last name.
 
 ## Past PIs
 
-- Mohammed K. AlShakhori
+- Mohammed K. AlShakhori [to be dropped during the Spring 2021 addendum]
 
 ## Advisory Board
 
