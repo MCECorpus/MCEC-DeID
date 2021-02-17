@@ -2,9 +2,10 @@
 
 All roles are ordered alphabetically by last name.
 
-## Founder
+## Founders
 
 - Damian Romero
+- Hanyu Jia
 
 ## Directors
 
