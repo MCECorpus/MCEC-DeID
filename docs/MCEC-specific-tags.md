@@ -28,23 +28,16 @@ Scores/grades
 |Automated y/n|Scores (test, assignments, course, etc.)|[[academic-score]]|Notes|
 |Automated y/n|Transcript information|[[transcript-info]]|Notes|
 
-
-|Automated y/n|Class list information|[[classlist-info]]|Notes|
-|Automated y/n|Course (or any) schedule information|[[schedule-info]]|Notes|
-|Automated y/n|Financial information|[[financial-info]]|Notes|
-|Automated y/n|Student discipline files|[[discipline-file]]|Notes|
-
 ### MCEC ID "B"
 
-University groups and affiliations
+Groups and affiliations
 
 Automated y/n|Item|Tag|Notes|
 |--------------|----|---|-----|
 Automated y/n|Department|[[department]]|Notes|
 Automated y/n|Laboratory|[[laboratory]]|Notes|
-Automated y/n|Academic group|[[academic-group]]|E.g. reading groups, R Ladies|
-Automated y/n|Other group|[[academic-group]]|E.g. student clubs, global ambassadors|
-Automated y/n|Academic unit|[[academic-unit]]|Notes|
+Automated y/n|Groups or associations|[[group-name]]|E.g. student clubs, associations|
+Automated y/n|Academic unit|[[academic-unit]]|any units below the college/school level|
 
 ### MCEC ID "C"
 
@@ -79,14 +72,24 @@ Automated y/n|Item|Tag|Notes|
 |--------------|----|---|-----|
 Automated y/n|Book|[[book]]|Even if abbreviated|
 Automated y/n|Academic article|[[article]]|Notes|
+Automated y/n|Other course materials|[[course-material]]|Syllabi, artifacts, and other non-book, non-article materials|
+Automated y/n|Teaching software|[[teaching-software]]|Piazza, Canvas, BrightSpace, Blackboard, etc.|
 Automated y/n|Laboratory equipment|[[laboratory-equip]]|Notes|
 Automated y/n|Computer software|[[computer-software]]|Only specific software that can be used by a small number of people. Matlab or Python would not count as identifier computer-software.|
 Automated y/n|Research method|[[research-method]]|Notes|
-Automated y/n|Other course materials|[[course-material]]|E.g. syllabi, artifacts, etc|
+
+### MCEC ID "F"
+
+Other records
+
+|Automated y/n|Class list information|[[classlist-info]]|Notes|
+|Automated y/n|Course (or any) schedule information|[[schedule-info]]|Notes|
+|Automated y/n|Financial information|[[financial-info]]|Notes|
+|Automated y/n|Student discipline files|[[discipline-file]]|Notes|
+|Automated y/n|Work positions|[[position-name]]|Grader, assistant, director, etc.|
 
 ## Examples of an Education Record include:
 
-- Admissions information for students who are accepted and enrolled <-- Safe Harbor Method D
 - Biographical information including date and place of birth, gender, nationality, information about race and ethnicity, and identification photographs
 - Grades, test scores, evaluations, courses taken, academic specialization and activities, and official communications regarding a student's status
 - Course work including papers and exams, class schedules, as well as written, email or recorded communications that are part of the academic process
@@ -94,9 +97,6 @@ Automated y/n|Other course materials|[[course-material]]|E.g. syllabi, artifacts
 - Students' financial and financial aid records
 - Internship program records
 - SID:  Student Identification number
-
-
-
 
 ## Personally identifiable information
 
@@ -124,4 +124,3 @@ FERPA defines certain personally identifiable information [(34 CFR § 99.3.)](ht
 |(Q) Full-face photographs and any comparable images|NaN||
 |(R) Any other unique identifying number, characteristic, or code, except as permitted by paragraph (c) of this section|(f) Other information that, alone or in combination, is linked or linkable to a specific student that would allow a reasonable person in the school community, who does not have personal knowledge of the relevant circumstances, to identify the student with reasonable certainty|see tags|
 |NaN|(g) Information requested by a person who the educational agency or institution reasonably believes knows the identity of the student to whom the education record relates.|see tags|
-

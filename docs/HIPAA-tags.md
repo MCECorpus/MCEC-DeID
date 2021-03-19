@@ -41,6 +41,7 @@ Automated y/n|Item|Tag|Notes|
 |Automated y/n|County|[[county]]|notes|
 |Automated y/n|Precinct|[[precinct]]|notes|
 |Automated y/n|ZIP code|[[zip-code]]|notes|
+|Automated y/n|Other locations|[[location]]|Building/office numbers, etc.|
 
 ## Safe Harbor ID: "C"
 
@@ -50,8 +51,8 @@ Automated y/n|Item|Tag|Notes|
 |--------------|----|---|-----|
 |All elements of dates (except year) for dates that are directly related to an individual|
 |Automated y/n|Birth date|[[birth-date]]|notes|
-|Automated y/n|Admission date|[[admission-date]]|Admission to the university|
-|Automated y/n|Graduation date|[[graduation-date]]|Graduation from the university|
+|Automated y/n|Admission date|[[admission-date]]|FERPA: Admission to the university|
+|Automated y/n|Graduation date|[[graduation-date]]|FERPA: Graduation from the university|
 |Automated y/n|Semester|[[semester]]|*Specific to the MCEC|
 |Automated y/n|Discharge date|[[discharge-date]]|notes|
 |Automated y/n|Death date|[[death-date]]|notes|
